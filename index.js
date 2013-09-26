@@ -17,6 +17,14 @@ if ('development' === app.get('env')) {
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 }
 
+/* TIP port 3000 should be our fallback only (dev, test environments).
+ *   For Heroku, you will want to grab the port from an environment variable.
+ *   `app.set('custom-name')` sets custom data to the app, which you can
+ *   retrieve later with `app.get('custom-name')`. We will use this when we
+ *   create our server.
+ */
+app.set('port', process.env.PORT || 3000);
+
 app.use(express.bodyParser());
 
 /* Set a view engine. `EJS` is similar to ERB in Rails:
@@ -42,7 +50,10 @@ app.use(express.static('public'));
 // routes
 require('./config/routes')(app);
 
-// start app
-http.createServer(app).listen(3000, function () {
-  console.log("Server ready at http://localhost:3000");
+/* start server:
+ * We are using our port number that we set earlier in the file with our
+ * `app.set('port', ...)` assignment. You had this hard-coded as 3000 before.
+ */
+http.createServer(app).listen(app.get('port'), function () {
+  console.log('Server listening on port ' + app.get('port'));
 });
