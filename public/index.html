@@ -1,0 +1,27 @@
+<html ng-app="">
+<head>
+  <title>CLOV3R</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+  <script src="js/controllers/app.js"></script>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container" ng-controller="GoalsCtrl" >
+    <h1>Goals</h1>
+    <ul>
+      <li ng-repeat='goal in goals'>
+        <a href="" ng-click="setGoal(goal.id)">{{goal.name}}</a>
+      </li>
+    </ul>
+    <div ng-show="currentGoal">
+      <h2>{{currentGoal.name}}</h2>
+      <table class='table table-striped'>
+        <tr>
+          <td>{{currentGoal.category}}</td>
+          <td>{{currentGoal.time}} hours</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
