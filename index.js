@@ -1,27 +1,35 @@
-var express = require('express'),
-  http = require('http');
+var express = require('express')
+  , http    = require('http');
 
 var airports = require('./data/airports.json');
-var flights = require('./data/flights.json');
+var flights  = require('./data/flights.json');
 var reservations = [];
 
 for (var i = 0; i < flights.length; i++) {
-  flights[i].originFullName = airports[flights[i].origin].name;
+  flights[i].originFullName      = airports[flights[i].origin].name;
   flights[i].destinationFullName = airports[flights[i].destination].name;
 }
 
 function getMatchingFlights (data) {
-  return flights.filter(function  (item) {
+  return flights.filter(function (item) {
     return (item.origin === data.origin) &&
       (item.destination === data.destination);
   });
 }
 
-var app = express()
-  .use(express.bodyParser())
-  .use(express.static('public'));
+/* TIP export your `app` by setting it as the export
+ *   value, so that you can require it elsewhere –
+ *   like in the REPL or if you wanted to embed one
+ *   app in another app.
+ */
+var app = module.exports = express();
 
-app.get('/airports', function  (req, res) {
+/* Then we can start configuring the Express app
+ */
+app.use(express.bodyParser());
+app.use(express.static('public'));
+
+app.get('/airports', function (req, res) {
   res.json(airports);
 });
 
@@ -38,7 +46,7 @@ app.get('/flights', function (req, res) {
 });
 
 app.get('/flights/:origin', function (req, res) {
-  var with_origin = flights.filter(function  (item) {
+  var with_origin = flights.filter(function (item) {
     return item.origin === req.params.origin;
   });
 
@@ -51,11 +59,11 @@ app.get('/flights/:origin/:destination', function (req, res) {
   res.json(matches);
 });
 
-app.get('/reservations', function  (req, res) {
+app.get('/reservations', function (req, res) {
   res.json(reservations);
 });
 
-app.post('/reservations', function  (req, res) {
+app.post('/reservations', function (req, res) {
   var matches = getMatchingFlights(req.body);
 
   if (matches.length) {
@@ -66,7 +74,7 @@ app.post('/reservations', function  (req, res) {
   }
 });
 
-app.get('/*', function  (req, res) {
+app.get('/*', function (req, res) {
   res.json(404, {status: 'not found'});
 });
 
