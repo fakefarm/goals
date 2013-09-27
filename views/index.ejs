@@ -1,27 +1,29 @@
 <html ng-app="">
 <head>
-  <title>CLOV3R</title>
+  <title>Goalies</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
   <script src="/js/controllers/app.js"></script>
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/base.css">
 </head>
 <body>
   <div class="container" ng-controller="GoalsCtrl" >
-    <h1>Goals</h1>
+    <div class="pull-right" ng-include src="userInfo"></div>
+    <div ng-include src="logo"></div>
     <ul>
       <li ng-repeat='goal in goals'>
         <a href="" ng-click="setGoal(goal.id)">{{goal.name}}</a>
+        <a href="" ng-click="editGoal(goal.id)"> (edit)</a>
       </li>
     </ul>
-    <div ng-show="currentGoal">
-      <h2>{{currentGoal.name}}</h2>
-      <table class='table table-striped'>
-        <tr>
-          <td>{{currentGoal.category}}</td>
-          <td>{{currentGoal.time}} hours</td>
-        </tr>
-      </table>
+
+    <div class="span6" ng-include src="activeGoal"></div>
+
+    <div ng-show="updatedGoal" class="span5">
+      <h2>Edit Goal</h2>
+      <input ng-show="goal" type="text" placeholder="goal.name">{{goal.name}}</input>
     </div>
   </div>
 </body>
 </html>
+

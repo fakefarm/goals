@@ -4,26 +4,38 @@ function GoalsCtrl($scope){
       id: 1,
       name: 'learn Angular',
       category: 'personal',
-      time: 3
+      text: "I'm enjoying what I'm learning so far!"
     },
     2 : {
       id: 2,
       name: 'Earn more money',
       category: 'responsibilities',
-      time: 2.5
+      text: "The best way to do that is by learning Angular"
     },
     3 : {
       id: 3,
       name: 'Buy Flowers for Danae',
       category: 'relational',
-      time: 5
+      text: 'I need to thank her for being so sweet, letting me work late on Angular'
     },
   };
 
   $scope.currentGoal = null;
+  $scope.updatedGoal = null;
+
+  // partials
+  $scope.activeGoal = 'partials/current_goal.html';
+  $scope.userInfo   = 'partials/user_info.html';
+  $scope.logo       = 'partials/logo.html'
 
   $scope.setGoal = function (id) {
     $scope.currentGoal = $scope.goals[id];
   };
+
+  $scope.editGoal = function (id) {
+    $scope.updatedGoal = $scope.goals[id];
+  };
+
+
 }
 
