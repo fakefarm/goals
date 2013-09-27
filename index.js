@@ -37,10 +37,9 @@ app.use(express.bodyParser());
 app.set('view engine', 'ejs');
 
 /* TIP the `router` was being called implicitly for you previously,
- *   when you declared your first `.get()` or `.post()`, etc. The order
- *   is important. I've read that it's better to explicity call it
- *   so that you have more control. For example, I've read that it's
- *   best to add it before your static file handler, otherwise it will
+ *   when you declared your first `.get()` or `.post()`, etc. The order is
+ *   important. Calling it explicity gives you more control. I've read that
+ *   it's best to add it before your static file handler, otherwise it will
  *   supposedly check the disk for static files for each request before
  *   checking the routes.
  */
