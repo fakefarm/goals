@@ -17,12 +17,8 @@
       </li>
     </ul>
 
-    <div class="span6" ng-include src="activeGoal"></div>
-
-    <div ng-show="updatedGoal" class="span5">
-      <h2>Edit Goal</h2>
-      <input ng-show="goal" type="text" placeholder="goal.name">{{goal.name}}</input>
-    </div>
+    <div class="span6" ng-include src="currentGoalPartial"></div>
+    <div class="span12" ng-include src="editGoalForm"></div>
   </div>
 </body>
 </html>

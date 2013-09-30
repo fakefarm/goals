@@ -3,7 +3,10 @@
   <table class='table table-striped'>
     <tr>
       <td>{{currentGoal.category}}</td>
-      <td>{{currentGoal.text}}</td>
+      <td>{{currentGoal.text}}
+        <!-- Why won't this open the edit box?... -->
+        <a href="" ng-click="editGoal(curentGoal.name)">(Edit)</a>
+      </td>
     </tr>
   </table>
 </div>

@@ -20,22 +20,18 @@ function GoalsCtrl($scope){
     },
   };
 
-  $scope.currentGoal = null;
-  $scope.updatedGoal = null;
-
   // partials
-  $scope.activeGoal = 'partials/current_goal.html';
-  $scope.userInfo   = 'partials/user_info.html';
-  $scope.logo       = 'partials/logo.html'
+  $scope.currentGoalPartial   = 'partials/current_goal.html';
+  $scope.userInfo     = 'partials/user_info.html';
+  $scope.logo         = 'partials/logo.html';
+  $scope.editGoalForm = 'partials/edit_goal.html';
 
   $scope.setGoal = function (id) {
     $scope.currentGoal = $scope.goals[id];
   };
 
   $scope.editGoal = function (id) {
-    $scope.updatedGoal = $scope.goals[id];
+    $scope.editing = $scope.goals[id];
   };
-
-
 }
 
