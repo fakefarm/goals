@@ -1,0 +1,17 @@
+<h1>Stat Calculator</h1>
+<div class="editing" ng-controller="GoalsCtrl">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Time per session</th>
+      <th>Frequency per week</th>
+      <th>Time per week</th>
+    </tr>
+    <tr ng-repeat="goal in goals">
+      <td>{{goal.name}}</td>
+      <td class="calcs"><input ng-model='goal.time'/></td>
+      <td class="calcs"><input ng-model='goal.frequency'/></td>
+      <td ng-show="goal.frequency">{{ goal.time * goal.frequency }} hours</td>
+    </tr>
+  </table>
+</div>

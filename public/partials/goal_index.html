@@ -1,0 +1,9 @@
+<h1>Goals</h1>
+<ul>
+  <li ng-repeat='goal in goals'>
+    <a href="" ng-click="setGoal(goal.id)">{{goal.name}}</a>
+    <a href="" ng-click="editGoal(goal.id)"> (edit)</a>
+  </li>
+</ul>
+
+<div class="span12" ng-include src="currentGoalPartial"></div>

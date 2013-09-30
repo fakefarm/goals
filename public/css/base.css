@@ -16,16 +16,29 @@ body{
 }
 a, p, td{
   font-family: "lexia",serif;
+  font-size: 1.2em;
 }
 
-h2{
+td a{
+  font-size: 1em;
+}
+
+h2, th{
   font-family: "museo-sans-rounded",sans-serif;
   font-weight: 700;
   color: #4c4c4c
 }
 
+th{
+  color: #aaa;
+  font-size: .8em;
+}
+
+
+
 input, textarea{
   font-family: "museo-sans-rounded",sans-serif;
+  width: 100%;
   color: #aaa;
   border: none;
   margin: .5% 0;
@@ -33,6 +46,9 @@ input, textarea{
   font-size: 1.3em;
 }
 
+.calcs{
+  padding: 1%;
+}
 
 .editing{
   background: #e4e4e4;

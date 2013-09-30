@@ -2,10 +2,14 @@
   <h2>{{currentGoal.name}}</h2>
   <table class='table table-striped'>
     <tr>
+      <th>Category</th>
+      <th>Description</th>
+    </tr>
+    <tr>
       <td>{{currentGoal.category}}</td>
       <td>{{currentGoal.text}}
         <!-- Why won't this open the edit box?... -->
-        <a href="" ng-click="editGoal(curentGoal.name)">(Edit)</a>
+        <a href="" ng-click="editGoal(curentGoal.name)">(edit)</a>
       </td>
     </tr>
   </table>

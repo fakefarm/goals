@@ -21,10 +21,11 @@ function GoalsCtrl($scope){
   };
 
   // partials
+  $scope.logo                 = 'partials/logo.html';
+  $scope.github               = 'partials/github.html';
   $scope.currentGoalPartial   = 'partials/current_goal.html';
-  $scope.userInfo     = 'partials/user_info.html';
-  $scope.logo         = 'partials/logo.html';
-  $scope.editGoalForm = 'partials/edit_goal.html';
+  $scope.editGoalForm         = 'partials/edit_goal.html';
+  $scope.navigation           = 'partials/navigation.html';
 
   $scope.setGoal = function (id) {
     $scope.currentGoal = $scope.goals[id];
