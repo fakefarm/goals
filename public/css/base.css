@@ -1,3 +1,41 @@
 body{
   background: #e4f8f7;
 }
+
+.wrapper{
+  background: white;
+  width: 80%;
+  padding: 2%;
+  margin: 3% auto;
+  border-left: #ff6666 8px solid;
+  border-right: #ff6666 8px solid;
+}
+ h1{
+    font-family: "mono45-headline", sans-serif;
+    color: #4c4c4c
+}
+a, p, td{
+  font-family: "lexia",serif;
+}
+
+h2{
+  font-family: "museo-sans-rounded",sans-serif;
+  font-weight: 700;
+  color: #4c4c4c
+}
+
+input, textarea{
+  font-family: "museo-sans-rounded",sans-serif;
+  color: #aaa;
+  border: none;
+  margin: .5% 0;
+  padding: 1%;
+  font-size: 1.3em;
+}
+
+
+.editing{
+  background: #e4e4e4;
+  color: #aaa;
+  padding: .5% 2% 1% 2%;
+}

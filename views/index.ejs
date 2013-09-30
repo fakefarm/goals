@@ -3,22 +3,25 @@
   <title>Goalies</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
   <script src="/js/controllers/app.js"></script>
+  <script type="text/javascript" src="//use.typekit.net/kkr5pqb.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/base.css">
 </head>
 <body>
-  <div class="container" ng-controller="GoalsCtrl" >
-    <div class="pull-right" ng-include src="userInfo"></div>
-    <div ng-include src="logo"></div>
-    <ul>
-      <li ng-repeat='goal in goals'>
-        <a href="" ng-click="setGoal(goal.id)">{{goal.name}}</a>
-        <a href="" ng-click="editGoal(goal.id)"> (edit)</a>
-      </li>
-    </ul>
-
-    <div class="span6" ng-include src="currentGoalPartial"></div>
-    <div class="span12" ng-include src="editGoalForm"></div>
+    <div class="container" ng-controller="GoalsCtrl" >
+      <div class="pull-right" ng-include src="userInfo"></div>
+      <div ng-include src="logo"></div>
+      <div class="wrapper">
+        <ul>
+          <li ng-repeat='goal in goals'>
+            <a href="" ng-click="setGoal(goal.id)">{{goal.name}}</a>
+            <a href="" ng-click="editGoal(goal.id)"> (edit)</a>
+          </li>
+        </ul>
+        <div class="span6" ng-include src="currentGoalPartial"></div>
+        <div class="span12" ng-include src="editGoalForm"></div>
+    </div>
   </div>
 </body>
 </html>
