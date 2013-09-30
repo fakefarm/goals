@@ -14,6 +14,7 @@ body{
     font-family: "mono45-headline", sans-serif;
     color: #4c4c4c
 }
+
 a, p, td{
   font-family: "lexia",serif;
   font-size: 1.2em;
@@ -23,10 +24,14 @@ td a{
   font-size: 1em;
 }
 
-h2, th{
+h2, h3, th{
   font-family: "museo-sans-rounded",sans-serif;
   font-weight: 700;
   color: #4c4c4c
+}
+
+h3{
+  color: #aaa;
 }
 
 th{
@@ -55,3 +60,4 @@ input, textarea{
   color: #aaa;
   padding: .5% 2% 1% 2%;
 }
+
