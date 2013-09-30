@@ -1,4 +1,14 @@
-function GoalsCtrl($scope){
+function AppCtrl($scope){
+
+  $scope.setActive = function(type) {
+    $scope.welcomeActive = '';
+    $scope.goalsActive = '';
+    $scope.calculatorActive = '';
+    $scope.aboutActive = '';
+
+    $scope[type + 'Active'] = 'active';
+  };
+
   $scope.goals = {
     1 : {
       id: 1,

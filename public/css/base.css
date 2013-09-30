@@ -10,6 +10,9 @@ body{
   border-left: #ff6666 8px solid;
   border-right: #ff6666 8px solid;
 }
+.main-nav{
+  margin: 1% 0;
+}
  h1{
     font-family: "mono45-headline", sans-serif;
     color: #4c4c4c
