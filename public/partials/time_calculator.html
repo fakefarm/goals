@@ -3,15 +3,63 @@
   <table>
     <tr>
       <th>Name</th>
+      <th>Category</th>
       <th>Time per session</th>
       <th>Frequency per week</th>
       <th>Time per week</th>
+      <th></th>
     </tr>
     <tr ng-repeat="goal in goals">
       <td>{{goal.name}}</td>
-      <td class="calcs"><input ng-model='goal.time'/></td>
-      <td class="calcs"><input ng-model='goal.frequency'/></td>
-      <td ng-show="goal.frequency">{{ goal.time * goal.frequency }} hours</td>
+      <td class="category-name">{{goal.category}}</td>
+      <td class="calcs">
+        <select ng-model='goal.time'/>
+          <option value="0" selected="selected">Choose...</option>
+          <option value=".25">15 min</option>
+          <option value=".5">30 min</option>
+          <option value=".75">45 min</option>
+          <option value="1">1 hour</option>
+          <option value="2">2 hours</option>
+          <option value="3">3 hours</option>
+          <option value="4">4 hours</option>
+          <option value="5">6 hours</option>
+          <option value="6">8 hours</option>
+          <option value="7">10 hours</option>
+        </select>
+      </td>
+      <td class="calcs">
+        <select ng-model='goal.frequency'/>
+          <option value="0" selected="selected">Choose...</option>
+          <option value="1">once a week</option>
+          <option value="2">twice a week</option>
+          <option value="3">three times a week</option>
+          <option value="4">four times a week</option>
+          <option value="5">five times a week</option>
+        </select>
+      </td>
+      <td class="calcs">{{ calculateStats(goal.time, goal.frequency) }}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>Sleep per night:</td>
+      <td>
+        <select ng-model="sleep.nights">
+          <option value="6">6 hours (Zombie life)</option>
+          <option value="7">7 hours (Athlete)</option>
+          <option value="8">8 hours (optimal)</option>
+          <option value="9">9 hours (must be nice)</option>
+          <option value="10">10 hours (dude...)</option>
+        </select>
+      </td>
+      <td ng-show="sleep.nights">{{sleep.nights * 7}}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Available Time:</td>
+      <td ng-show="sleep.nights">{{ 168 - (statSummary(goals) + (sleep.nights * 7)) }}</td>
     </tr>
   </table>
 </div>

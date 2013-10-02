@@ -4,7 +4,7 @@ body{
 
 .wrapper{
   background: white;
-  width: 80%;
+  width: 90%;
   padding: 2%;
   margin: 3% auto;
   border-left: #ff6666 8px solid;
@@ -67,4 +67,12 @@ input, textarea{
 
 .main-nav .nav-pills>li.active>a {
   background: #ff6666;
+}
+
+
+.category-name{
+  font-size: .8em;
+  color: #4c4c4c;
+  font-family: "museo-sans-rounded",sans-serif;
+  padding: 0 2%;
 }

@@ -12,4 +12,5 @@ function GoalsCtrl ($scope) {
 
   $scope.currentGoalPartial   = 'partials/current_goal.html';
   $scope.editGoalForm         = 'partials/edit_goal.html';
+
 }
