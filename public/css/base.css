@@ -18,7 +18,7 @@ body{
     color: #4c4c4c
 }
 
-a, p, td{
+a, p, li, td{
   font-family: "lexia",serif;
   font-size: 1.2em;
 }

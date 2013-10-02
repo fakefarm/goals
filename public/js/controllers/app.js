@@ -5,6 +5,7 @@ function AppCtrl($scope){
     $scope.goalsActive = '';
     $scope.calculatorActive = '';
     $scope.aboutActive = '';
+    $scope.progressActive = '';
 
     $scope[type + 'Active'] = 'active';
   };

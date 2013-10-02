@@ -1,0 +1,17 @@
+<div ng-show="theEntry">
+  <h2>{{ theEntry.title }}</h2>
+  <em>{{ theEntry.date }}</em>
+  <p>{{ theEntry.post }}</p>
+  <div ng-show="theEntry.focus">
+    <h3>Today's topics</h3>
+    <ul ng-repeat="topic in theEntry.focus">
+      <li>{{ topic }}</li>
+    </ul>
+  </div>
+  <div ng-show="theEntry.resources">
+    <h3>Resouces used</h3>
+    <ul ng-repeat="link in theEntry.resources">
+      <li><a href="http://www.{{link[0]}} target='_blank'">{{link[1]}}</a></li>
+    </ul>
+  </div>
+</div>

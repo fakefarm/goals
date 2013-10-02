@@ -27,6 +27,10 @@ function goaliesRouter ($routeProvider) {
 
     .when('/about',
       { templateUrl: 'partials/about.html',
-      controller: 'AboutCtrl'});
+      controller: 'AboutCtrl'})
+
+    .when('/progress',
+      { templateUrl: 'partials/progress.html',
+      controller: 'ProgressCtrl'});
 }
 

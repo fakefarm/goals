@@ -1,0 +1,12 @@
+<h1>Progress Journal</h1>
+<div ng-repeat="entry in entries">
+  <ul>
+    <li>
+      <a href="" ng-click="entryDetails(entry.id)">{{entry.title}}</a>
+      {{entry.date}}
+    </li>
+  </ul>
+</div>
+
+<div ng-include src="entry"></div>
+
