@@ -1,9 +1,10 @@
 <div ng-show="currentGoal">
-  <h2>{{currentGoal.name}}</h2>
+  <h2><a ng-href="#/goal/{{currentGoal.name | parameratize }}">{{currentGoal.name}}</a></h2>
   <table class='table table-striped'>
     <tr>
       <th>Category</th>
       <th>Description</th>
+      <th></th>
     </tr>
     <tr>
       <td>{{currentGoal.category}}</td>

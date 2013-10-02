@@ -3,7 +3,7 @@
 *
 * What would you like to know?
 */
-angular.module('goalies', [])
+angular.module('goalies', ['goaliesFilters'])
   .config(goaliesRouter);
 
 
@@ -16,6 +16,10 @@ function goaliesRouter ($routeProvider) {
       controller: function($scope){
         $scope.setActive('welcome');
       }})
+
+    .when('/goal/:goalName',
+      { templateUrl: 'partials/current_goal.html',
+      controller: 'CategoryCtrl'})
 
     .when('/calculator',
       { templateUrl: 'partials/time_calculator.html',
