@@ -9,7 +9,7 @@ function AppCtrl($scope){
     $scope[type + 'Active'] = 'active';
   };
 
-  $scope.goals = {
+    $scope.goals = {
     1 : {
       id: 1,
       name: 'learn Angular',
@@ -30,19 +30,10 @@ function AppCtrl($scope){
     },
   };
 
+
   // partials
   $scope.logo                 = 'partials/logo.html';
   $scope.github               = 'partials/github.html';
-  $scope.currentGoalPartial   = 'partials/current_goal.html';
-  $scope.editGoalForm         = 'partials/edit_goal.html';
   $scope.navigation           = 'partials/navigation.html';
-
-  $scope.setGoal = function (id) {
-    $scope.currentGoal = $scope.goals[id];
-  };
-
-  $scope.editGoal = function (id) {
-    $scope.editing = $scope.goals[id];
-  };
 }
 

@@ -8,10 +8,25 @@ angular.module('goalies', [])
 
 
 function goaliesRouter ($routeProvider) {
+
   $routeProvider
-    .when('/',  { templateUrl: 'partials/welcome.html'})
-    .when('/calculator',  { templateUrl: 'partials/time_calculator.html'})
-    .when('/goals', { templateUrl: 'partials/goal_index.html'})
-    .when('/about', { templateUrl: 'partials/about.html'})
-    ;
+
+    .when('/',
+      { templateUrl: 'partials/welcome.html',
+      controller: function($scope){
+        $scope.setActive('welcome');
+      }})
+
+    .when('/calculator',
+      { templateUrl: 'partials/time_calculator.html',
+      controller: 'CalculatorCtrl'})
+
+    .when('/goals',
+      { templateUrl: 'partials/goal_index.html',
+      controller: 'GoalsCtrl'})
+
+    .when('/about',
+      { templateUrl: 'partials/about.html',
+      controller: 'AboutCtrl'});
 }
+
