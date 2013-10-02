@@ -17,7 +17,7 @@ function goaliesRouter ($routeProvider) {
         $scope.setActive('welcome');
       }})
 
-    .when('/goal/:goalName',
+    .when('/goal/:goalName/:goalId',
       { templateUrl: 'partials/current_goal.html',
       controller: 'CategoryCtrl'})
 
